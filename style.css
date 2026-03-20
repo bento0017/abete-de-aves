@@ -1,0 +1,241 @@
+/* ==== VARIÁVEIS ==== */
+:root {
+  --cor-principal: #013220; /* verde‑escuro (logotipo) */
+  --cor-secundaria: #0a7d55; /* verde‑mais‑claro para CTAs */
+  --cor-fundo: #f4f4f4;
+  --cor-texto: #222;
+  --max-largura: 1200px;
+}
+
+/* ==== GERAL ==== */
+body {
+  background: var(--cor-fundo);
+  font-family: "Montserrat", sans-serif;
+}
+.container {
+  max-width: var(--max-largura);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==== HEADER ==== */
+.site-header {
+  background: var(--cor-principal);
+  color: #fff;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+.logo img {
+  height: 50px;
+}
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+.main-nav a {
+  color: #fff;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.main-nav a:hover {
+  opacity: 0.8;
+}
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* ==== HERO ==== */
+.hero {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+}
+.hero picture,
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1rem;
+}
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.cta-btn {
+  background: var(--cor-secundaria);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.cta-btn:hover {
+  background: #0c5c3f;
+}
+
+/* ==== SEÇÕES COMUNS ==== */
+section {
+  padding: 3rem 0;
+  background: #fff;
+}
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--cor-principal);
+}
+
+/* ==== SERVIÇOS ==== */
+.services .service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.services .card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  text-align: center;
+  padding: 1.2rem;
+  transition: transform 0.2s;
+}
+.services .card:hover {
+  transform: translateY(-4px);
+}
+.services .card img {
+  height: 60px;
+  margin-bottom: 0.8rem;
+}
+.services .card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ==== QUEM SOMOS ==== */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+.about-grid figure img {
+  border-radius: 6px;
+}
+
+/* ==== GALERIA ==== */
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+}
+.gallery .grid a img {
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+.gallery .grid a:hover img {
+  transform: scale(1.05);
+}
+
+/* ==== CONTACTO ==== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.contact-form button {
+  background: var(--cor-secundaria);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+.contact-form button:hover {
+  background: #0c5c3f;
+}
+
+/* ==== RODAPÉ ==== */
+.site-footer {
+  background: var(--cor-principal);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .main-nav {
+    display: none;
+  }
+  .main-nav.active {
+    display: block;
+    background: var(--cor-principal);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  .main-nav ul {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ==== LIGHTBOX (simples) ==== */
+.lightbox {
+  position: relative;
+}
+.lightbox::after {
+  content: "\2795";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.7;
+}
